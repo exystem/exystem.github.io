@@ -1,12 +1,9 @@
----
-title: "CouchBlast"
-subtitle: "open and independent gamig platform"
-description: "open and independent gamig platform"
----
+## CouchBlast
 
-# CouchBlast
+### open and independent gaming platform...
 
-## Content coming soon...
+Contetn coming soon... please stay tuned!
 
+## Tools for developers
 
 [CouchBlast Manifest Creator](https://exystem.github.io/couchblast/manifestcreator.html)
