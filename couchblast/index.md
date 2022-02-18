@@ -1,7 +1,3 @@
-layout: page
-title: CouchBlast
-description: open and independent gaming platform
-
 # CouchBlast
 
 ## Content coming soon...
