@@ -176,6 +176,52 @@
 				<input type="text" name="windows-disc" class="form-control form-control-sm" placeholder="5" value="any" />
             </div>
 			
+			<br/>
+			<h4>Mac OSX Package</h4>
+			
+            <div class="mb-3">
+                <label>Available</label>
+                <select type="text" id="macosx-available" name="macosx-available" class="form-control form-control-sm" placeholder="https://...." required onchange="onMacOsxEnabledChanged(this)">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</select>
+            </div>
+            <div class="mb-3">
+                <label>Package URL <small>(zip)</small></label>
+                <input type="text" name="macosx-packageurl" class="form-control form-control-sm" placeholder="https://...." />
+            </div>
+            <div class="mb-3">
+                <label>Executable <small>(relative path inside zip file)</small></label>
+                <input type="text" name="macosx-executable" class="form-control form-control-sm" placeholder="ExampleGame.exe" />
+            </div>
+            <div class="mb-3">
+                <label>Version</small></label>
+                <input type="text" name="macosx-version" class="form-control form-control-sm" placeholder="1.0.0" />
+            </div>
+			
+            <div class="mb-3">
+				<h6>System Requirements</h6>
+				<label>RAM (MB)</small></label>
+				<input type="text" name="macosx-ram" class="form-control form-control-sm" placeholder="2000" value="any" />
+            </div>
+            <div class="mb-3">
+				<label>VRAM (MB)</small></label>
+				<input type="text" name="macosx-vram" class="form-control form-control-sm" placeholder="500" value="any" />
+            </div>
+            <div class="mb-3">
+				<label>CPU (GHz)</small></label>
+				<input type="text" name="macosx-cpu" class="form-control form-control-sm" placeholder="2.0" value="any" />
+            </div>
+            <div class="mb-3">
+				<label>CPU Cores</small></label>
+				<input type="text" name="macosx-cores" class="form-control form-control-sm" placeholder="2" value="any" />
+            </div>
+            <div class="mb-3">
+				<label>Disc space (GB)</small></label>
+				<input type="text" name="macosx-disc" class="form-control form-control-sm" placeholder="5" value="any" />
+            </div>
+			
+			
 		</div>
 	</div>
 	<br/>
