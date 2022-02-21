@@ -61,6 +61,20 @@ function onChangedContent(){
 		xml += nl + '    <Package platform="windows" executable="' + exe + '" version="' + version + '" ram="' + ram + '" vram="' + vram + '" cpu="' + cpu + '" cores="' + cores + '" disc="' + disc + '">' + url + '</Package>';
 	}
 	
+	if($('#macosx-available').val() == 'true'){
+		
+		var url = getVal('macosx-packageurl');
+		var exe = getVal('macosx-executable');
+		var version = getVal('macosx-version');
+		var ram = getPerformanceVal(getVal('macosx-ram'), 'mb');
+		var vram = getPerformanceVal(getVal('macosx-vram'), 'mb');
+		var cpu = getPerformanceVal(getVal('macosx-cpu'), 'ghz');
+		var cores = getPerformanceVal(getVal('macosx-cores'), '');
+		var disc = getPerformanceVal(getVal('macosx-disc'), 'gb');
+		
+		xml += nl + '    <Package platform="mac" executable="' + exe + '" version="' + version + '" ram="' + ram + '" vram="' + vram + '" cpu="' + cpu + '" cores="' + cores + '" disc="' + disc + '">' + url + '</Package>';
+	}
+	
 	
 	xml += nl + '</Game>'
 	
@@ -109,10 +123,31 @@ function onWindowsEnabledChanged(selectObj){
 	onChangedContent();
 }
 
+function onMacOsxEnabledChanged(selectObj){
+	
+	if($(selectObj).val() == 'true')
+		$(document).find('input[name^="macosx-"]').each(function(){
+			$(this).parent().show();
+		});
+	else
+		$(document).find('input[name^="macosx-"]').each(function(){
+			$(this).parent().hide();
+		});
+		
+	onChangedContent();
+}
+
 
 $(document).ready(function(){
 	
 	$(document).find('input').on('change', onChangedContent);
 	$(document).find('textarea').on('change', onChangedContent);
 	
+	$('#linux-available').val('false');
+	$('#windows-available').val('false');
+	$('#macosx-available').val('false');
+	
+	onLinuxEnabledChanged($('#linux-available').get(0));
+	onWindowsEnabledChanged($('#windows-available').get(0));
+	onMacOsxEnabledChanged($('#macosx-available').get(0));
 });
